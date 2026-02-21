@@ -14,10 +14,9 @@ export default defineConfig([
       reactRefresh.configs.vite,
     ],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 'latest',
       globals: globals.browser,
       parserOptions: {
-        ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
       },
@@ -29,12 +28,11 @@ export default defineConfig([
   {
     files: ['server/**/*.js', 'api/**/*.js'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 'latest',
       globals: {
         ...globals.node,
       },
       parserOptions: {
-        ecmaVersion: 'latest',
         sourceType: 'module',
       },
     },
