@@ -8,6 +8,7 @@ import FinalCTA from './components/FinalCTA'
 import { useReveal } from './hooks/useReveal'
 import { useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 export default function App() {
     const containerRef = useReveal()
@@ -35,6 +36,7 @@ export default function App() {
             <Comparison />
             <FinalCTA />
             <Analytics />
+            <SpeedInsights />
         </div>
     )
 }
