@@ -7,6 +7,7 @@ import Comparison from './components/Comparison'
 import FinalCTA from './components/FinalCTA'
 import { useReveal } from './hooks/useReveal'
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
     const containerRef = useReveal()
@@ -33,6 +34,7 @@ export default function App() {
             <Enterprise />
             <Comparison />
             <FinalCTA />
+            <Analytics />
         </div>
     )
 }
