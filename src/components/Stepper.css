@@ -1,0 +1,159 @@
+.rb-stepper-outer-container {
+  display: flex;
+  min-height: 100%;
+  flex: 1 1 0%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.rb-stepper-card {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 32rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(8, 8, 10, 0.86);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.35),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.rb-stepper-indicator-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 1.4rem 1.4rem 1rem;
+}
+
+.rb-stepper-indicator-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.rb-stepper-content-default {
+  position: relative;
+  overflow: hidden;
+}
+
+.rb-stepper-step-default {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  min-height: 124px;
+}
+
+.rb-stepper-footer-container {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  padding-bottom: 1.4rem;
+}
+
+.rb-stepper-footer-nav {
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.rb-stepper-footer-nav.rb-spread {
+  justify-content: space-between;
+}
+
+.rb-stepper-footer-nav.rb-end {
+  justify-content: flex-end;
+}
+
+.rb-stepper-back-button {
+  transition: all 220ms;
+  border: 0;
+  background: transparent;
+  border-radius: 0.25rem;
+  padding: 0.4rem 0.65rem;
+  color: #a3a3a3;
+  cursor: pointer;
+}
+
+.rb-stepper-back-button:hover {
+  color: #e5e5e5;
+}
+
+.rb-stepper-back-button.rb-inactive {
+  pointer-events: none;
+  opacity: 0.5;
+  color: #7a7a85;
+}
+
+.rb-stepper-next-button {
+  transition: all 220ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(96, 165, 250, 0.7);
+  border-radius: 9999px;
+  background-color: rgba(96, 165, 250, 0.16);
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  padding: 0.52rem 1rem;
+  cursor: pointer;
+}
+
+.rb-stepper-next-button:hover {
+  background-color: rgba(96, 165, 250, 0.28);
+  border-color: rgba(96, 165, 250, 0.9);
+}
+
+.rb-stepper-next-button.rb-next-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.rb-stepper-indicator {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.rb-stepper-indicator-inner {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.rb-stepper-active-dot {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 9999px;
+  background-color: #fff;
+}
+
+.rb-stepper-number {
+  font-size: 0.875rem;
+}
+
+.rb-stepper-connector {
+  position: relative;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  height: 0.125rem;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  background-color: #52525b;
+}
+
+.rb-stepper-connector-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transition: width 250ms ease;
+}

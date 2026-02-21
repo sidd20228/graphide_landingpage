@@ -14,52 +14,10 @@ export default function Hero() {
 
             {/* Interface Layer */}
             <div className="interface">
-                {/* Navbar */}
-                <nav className="navbar">
-                    <div className="nav-left">
-                        <a href="/" className="wordmark">GRAPHIDE</a>
-                        <ul className="nav-links">
-                            <li>
-                                <a href="#" className="nav-link">
-                                    Product{' '}
-                                    <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="nav-link">
-                                    Developers{' '}
-                                    <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="nav-link">
-                                    Docs{' '}
-                                    <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="nav-link">
-                                    Community{' '}
-                                    <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="nav-right">
-                        <a href="#cta" className="btn-waitlist btn-waitlist--nav">
-                            <span className="btn-glow"></span>
-                            <span className="btn-text">Join Waitlist</span>
-                        </a>
-                    </div>
-                </nav>
+                {/* Centered Wordmark */}
+                <div className="wordmark-hero">
+                    <span className="wordmark">GRAPHIDE</span>
+                </div>
 
                 {/* Hero Content */}
                 <main className="hero">
