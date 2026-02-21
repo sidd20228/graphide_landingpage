@@ -6,9 +6,23 @@ import Enterprise from './components/Enterprise'
 import Comparison from './components/Comparison'
 import FinalCTA from './components/FinalCTA'
 import { useReveal } from './hooks/useReveal'
+import { useEffect } from 'react'
 
 export default function App() {
     const containerRef = useReveal()
+
+    useEffect(() => {
+        const canonicalHref = `${window.location.origin}${window.location.pathname}`
+        let canonicalEl = document.querySelector('link[rel="canonical"]')
+
+        if (!canonicalEl) {
+            canonicalEl = document.createElement('link')
+            canonicalEl.setAttribute('rel', 'canonical')
+            document.head.appendChild(canonicalEl)
+        }
+
+        canonicalEl.setAttribute('href', canonicalHref)
+    }, [])
 
     return (
         <div ref={containerRef}>

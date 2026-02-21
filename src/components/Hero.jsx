@@ -27,9 +27,9 @@ export default function Hero() {
                             <span className="badge-label">Private beta launching</span>
                             <span className="badge-date">&nbsp;April 2026</span>
                         </div>
-                        <h1 className="hero-heading">Code at the Speed of Thought</h1>
+                        <h1 className="hero-heading">Graphide IDE: Code at the Speed of Thought</h1>
                         <p className="hero-subtitle">
-                            Graphide transforms your codebase into a living knowledge graph, enabling real‑time context,
+                            Graphide IDE transforms your codebase into a living knowledge graph, enabling real‑time context,
                             intelligent navigation, and seamless collaboration. Build faster, reason deeper, and ship with
                             clarity.
                         </p>
