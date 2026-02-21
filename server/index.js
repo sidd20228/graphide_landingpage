@@ -63,13 +63,22 @@ app.post('/api/waitlist', async (req, res) => {
       return res.status(400).json({ error: 'Please provide a valid email address.' })
     }
 
-    await pool.query(
+    const insertResult = await pool.query(
       `INSERT INTO waitlist_signups (name, email)
        VALUES ($1, $2)
        ON CONFLICT (email)
-       DO UPDATE SET name = EXCLUDED.name, updated_at = NOW()`,
+       DO NOTHING
+       RETURNING id`,
       [name, email],
     )
+
+    if (insertResult.rowCount === 0) {
+      return res.status(200).json({
+        ok: true,
+        alreadyRegistered: true,
+        message: 'You are already in the queue. We will contact you soon.',
+      })
+    }
 
     await transporter.sendMail({
       from: process.env.MAIL_FROM,
@@ -79,7 +88,11 @@ app.post('/api/waitlist', async (req, res) => {
       html: buildComingSoonEmail({ name }),
     })
 
-    return res.status(201).json({ ok: true })
+    return res.status(201).json({
+      ok: true,
+      alreadyRegistered: false,
+      message: 'Thanks! You are on the waitlist.',
+    })
   } catch (error) {
     console.error('waitlist_error', error)
     if (error?.code === 'EAUTH') {

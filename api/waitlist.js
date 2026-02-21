@@ -99,13 +99,22 @@ export default async function handler(req, res) {
 
     await ensureTable()
 
-    await getPool().query(
+    const insertResult = await getPool().query(
       `INSERT INTO waitlist_signups (name, email)
        VALUES ($1, $2)
        ON CONFLICT (email)
-       DO UPDATE SET name = EXCLUDED.name, updated_at = NOW()`,
+       DO NOTHING
+       RETURNING id`,
       [name, email],
     )
+
+    if (insertResult.rowCount === 0) {
+      return res.status(200).json({
+        ok: true,
+        alreadyRegistered: true,
+        message: 'You are already in the queue. We will contact you soon.',
+      })
+    }
 
     await getTransporter().sendMail({
       from: process.env.MAIL_FROM,
@@ -115,7 +124,11 @@ export default async function handler(req, res) {
       html: buildComingSoonEmail({ name }),
     })
 
-    return res.status(201).json({ ok: true })
+    return res.status(201).json({
+      ok: true,
+      alreadyRegistered: false,
+      message: 'Thanks! You are on the waitlist.',
+    })
   } catch (error) {
     console.error('vercel_waitlist_error', error)
     if (error?.code === 'EAUTH') {

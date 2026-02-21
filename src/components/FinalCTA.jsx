@@ -7,6 +7,7 @@ export default function FinalCTA() {
     const [email, setEmail] = useState('')
     const [currentStep, setCurrentStep] = useState(1)
     const [submitted, setSubmitted] = useState(false)
+    const [submitMessage, setSubmitMessage] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitError, setSubmitError] = useState('')
 
@@ -21,6 +22,7 @@ export default function FinalCTA() {
 
     const openModal = () => {
         setSubmitted(false)
+        setSubmitMessage('')
         setCurrentStep(1)
         setSubmitError('')
         setIsModalOpen(true)
@@ -46,6 +48,7 @@ export default function FinalCTA() {
                 throw new Error(payload.error || 'Failed to submit form.')
             }
 
+            setSubmitMessage(payload.message || 'Thanks! We’ll reach out soon.')
             setSubmitted(true)
             setIsModalOpen(false)
             setName('')
@@ -80,7 +83,7 @@ export default function FinalCTA() {
                         <span className="btn-glow"></span>
                         <span className="btn-text">Request Early Access</span>
                     </button>
-                    {submitted && <p className="cta-success">Thanks! We’ll reach out soon.</p>}
+                    {submitted && <p className="cta-success">{submitMessage || 'Thanks! We’ll reach out soon.'}</p>}
                     <p className="cta-footnote" data-reveal="">Built for teams that cannot afford uncertainty.</p>
                 </div>
             </section>
