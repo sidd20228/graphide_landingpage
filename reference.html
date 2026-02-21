@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Upscayl - AI Image Upscaler</title>
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" type="image/png" href="/logo/64x64.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://upscayl.org/" />
+    <meta name="twitter:title" content="Upscayl - AI Image Upscaler" />
+    <meta name="twitter:description"
+        content="The #1 Free and Open Source AI Image Upscaler for Linux, MacOS and Windows. Upscayl uses the power of AI to upscale your images with the best quality possible." />
+    <meta name="twitter:image" content="https://upscayl.org/og-image.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Upscayl - AI Image Upscaler" />
+    <meta name="description" content="Upscayl - AI Image Upscaler" />
+    <meta property="og:site_name" content="Upscayl" />
+    <meta property="og:url" content="https://upscayl.org" />
+    <meta property="og:image" content="https://upscayl.org/og-image.webp" />
+    <meta name="next-head-count" content="16" />
+    <link rel="preload" href="/_next/static/css/134def9e3c153853.css" as="style" />
+    <link rel="stylesheet" href="/_next/static/css/134def9e3c153853.css" data-n-g="" /><noscript
+        data-n-css=""></noscript>
+    <script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script>
+    <script src="/_next/static/chunks/webpack-2df7a8d27de1794c.js" defer=""></script>
+    <script src="/_next/static/chunks/framework-ecc4130bc7a58a64.js" defer=""></script>
+    <script src="/_next/static/chunks/main-b3dec8ec3df85a74.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/_app-c7ef60089dd028c0.js" defer=""></script>
+    <script src="/_next/static/chunks/41155975-1225da0c3a85a02e.js" defer=""></script>
+    <script src="/_next/static/chunks/398-5a9e16ef0abb714a.js" defer=""></script>
+    <script src="/_next/static/chunks/433-861600f9f494e345.js" defer=""></script>
+    <script src="/_next/static/chunks/735-f313b8bf05e1b221.js" defer=""></script>
+    <script src="/_next/static/chunks/798-2d24601f3fa7b890.js" defer=""></script>
+    <script src="/_next/static/chunks/96-27d9f7a4d8b7179e.js" defer=""></script>
+    <script src="/_next/static/chunks/178-71d308b2dc081c3c.js" defer=""></script>
+    <script src="/_next/static/chunks/599-f0569b12f7c1be22.js" defer=""></script>
+    <script src="/_next/static/chunks/932-035416abd4775e90.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/index-f53a5d1890de74fb.js" defer=""></script>
+    <script src="/_next/static/NE-noGAW8W0P9F_yLHJW7/_buildManifest.js" defer=""></script>
+    <script src="/_next/static/NE-noGAW8W0P9F_yLHJW7/_ssgManifest.js" defer=""></script>
+</head>
+
+<body>
+    <div id="__next">
+        <script>!function () { var d = document.documentElement, c = d.classList; c.remove('light', 'dark'); d.style.colorScheme = 'dark'; c.add('dark') }()</script>
+        <div class="relative mb-[25rem] flex min-h-screen flex-col gap-10 bg-slate-900 md:mb-[24rem]">
+            <div class="pointer-events-none fixed flex min-h-screen w-screen justify-center px-40 py-12" id="gradient">
+                <div class="bg-gradient absolute bottom-20 z-0"></div>
+            </div>
+            <div id="loader"
+                class="fixed left-0 top-0 z-[1000] flex h-full w-full items-center justify-center bg-slate-100 opacity-100">
+                <div class="absolute h-[500px] w-[500px] grow scale-0 transform rounded-full bg-slate-900"
+                    style="box-shadow:0 0 400px 400px rgb(15 23 42)"></div>
+                <h1 class="title text-4xl text-slate-900 md:text-7xl" style="display:none">Upscayl</h1>
+            </div>
+            <nav id="navbar"
+                class="animate fixed z-50 flex max-w-full items-center justify-between px-4 !duration-500 inset-x-0 top-0 mx-auto h-20 w-full border-none bg-transparent backdrop-blur-none md:h-24 md:px-10 xl:px-32"
+                style="background-image:none;background-size:4px 4px"><a class="flex items-center gap-2" href="/"><img
+                        src="/logo/64x64.png" alt="Upscayl Logo" class="w-7" />
+                    <p class="text-xl font-semibold tracking-tight">Upscayl</p>
+                </a><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R8ed6:"
+                    data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+                        <path d="M4 12h16"></path>
+                        <path d="M4 18h16"></path>
+                        <path d="M4 6h16"></path>
+                    </svg></button></nav>
+            <section class="relative z-10 h-screen w-full overflow-hidden"><img src="/home/bg-gradient.svg"
+                    class="absolute h-full w-full" alt="background gradient" id="glow" />
+                <div
+                    class="relative z-10 flex min-h-full flex-col items-center justify-between gap-4 px-4 pb-10 pt-4 sm:px-0 md:pt-28">
+                    <div class="flex w-full flex-col gap-4"><a
+                            href="https://github.com/upscayl/upscayl/releases/tag/v2.15.0"
+                            class="z-50 left-1/2 top-[10rem] hidden -translate-x-1/2 md:absolute md:top-[6.2rem] md:block"
+                            target="_blank"><button
+                                class="animate flex items-center gap-2 rounded-full border border-slate-600 bg-gradient-to-b from-slate-800 to-slate-700 px-4 py-2 text-xs font-medium text-slate-200 hover:border-slate-500 hover:bg-slate-700 md:text-sm"><span
+                                    class="h-3 w-3 rounded-full bg-green-400 shadow-[0px_0px_10px] shadow-green-400"></span>v2.15
+                                is out!</button></a>
+                        <div class="flex w-full flex-col items-center gap-4">
+                            <h1 class="relative z-[1] mt-16 w-full text-center text-4xl font-extralight text-foreground/50 md:text-7xl"
+                                id="title">From<!-- --> <span
+                                    class="whitespace-nowrap font-medium text-foreground">Science Fiction</span>
+                                <!-- -->to<!-- --> <span class="relative font-medium text-foreground">Reality</span>
+                            </h1>
+                            <h4 class="group z-[1] text-lg font-light text-primary/50 sm:text-2xl md:text-xl"
+                                id="subtitle">Supercharging your images with<!-- --> <span
+                                    class="animate before:conic-gradient relative rounded-sm px-2 before:absolute before:inset-0 before:h-full before:w-full before:rounded-[inherit] before:content-[&#x27;&#x27;]">AI</span>
+                            </h4>
+                        </div>
+                        <div class="flex w-full items-center justify-center gap-2" id="cta">
+                            <div class="h-[1px] w-40 rounded-full bg-gradient-to-l from-slate-500 to-transparent"></div>
+                            <div
+                                class="flex shrink-0 grow-0 flex-row items-center justify-between gap-5 rounded-full border border-slate-600 bg-slate-700/30 py-2 pl-4 pr-2">
+                                <p class="text-foreground/70">Explore the future</p><a href="/download">
+                                    <div style="--border-radius:50px"
+                                        class="animate relative grid cursor-pointer place-items-center text-black dark:text-white bg-slate-600/80! h-auto w-auto rounded-full border border-slate-500 p-0 px-4 py-2 hover:border-slate-500 hover:bg-slate-300/50">
+                                        <div style="--border-width:1px;--border-radius:50px;--border-radius-child:10px;--shine-pulse-duration:14s;--mask-linear-gradient:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);--background-radial-gradient:radial-gradient(transparent,transparent, #A07CFE,#FE8FB5,#FFBE7B,transparent,transparent)"
+                                            class="before:bg-shine-size before:absolute before:inset-[0] before:aspect-square before:h-full before:w-full before:rounded-[--border-radius] before:p-[--border-width] before:will-change-[background-position] before:content-[&quot;&quot;] before:![-webkit-mask-composite:xor] before:[background-image:var(--background-radial-gradient)] before:[background-size:300%_300%] before:![mask-composite:exclude] before:[mask:var(--mask-linear-gradient)] motion-safe:before:animate-[shine-pulse_var(--shine-pulse-duration)_infinite_linear]">
+                                        </div>
+                                        <div class="z-[1] h-full w-full rounded-[--border-radius-child]">Get Started
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="h-[1px] w-40 rounded-full bg-gradient-to-r from-slate-500 to-transparent"></div>
+                        </div>
+                    </div>
+                    <div id="slider"
+                        class="group z-[1] aspect-[16/10] w-full max-w-[38rem] overflow-hidden rounded-md bg-black/50 backdrop-blur-sm md:h-96"
+                        style="position:relative;display:flex;overflow:hidden;touch-action:none;user-select:none;-khtml-user-select:none;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none"
+                        data-rcs="root"><img src="/home/comparison/image-4.webp" id="original-image" alt="Original"
+                            style="background-position:0% 0%" class="h-full w-full scale-x-[-1] object-cover" />
+                        <div style="position:absolute;top:0;left:0;width:100%;height:100%;user-select:none;will-change:clip-path, transition;-khtml-user-select:none;-moz-user-select:none;-webkit-user-select:none"
+                            data-rcs="clip-item"><img src="/home/comparison/image-4-upscayl.webp" alt="Upscayl"
+                                id="upscayl-image" style="background-position:0% 0%"
+                                class="h-full w-full scale-x-[-1] object-cover" /></div><button
+                            aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+                            data-rcs="handle-container" role="slider"
+                            style="position:absolute;top:0;height:100%;background:none;border:0;padding:0;pointer-events:all;appearance:none;-webkit-appearance:none;-moz-appearance:none;outline:0;transform:translate3d(-50%, 0, 0)">
+                            <div aria-label="Drag to move" class="__rcs-handle-root"
+                                style="display:flex;flex-direction:column;place-items:center;height:100%;cursor:ew-resize;pointer-events:none;color:#fff">
+                                <div class="__rcs-handle-line"
+                                    style="flex-grow:1;height:100%;width:2px;background-color:currentColor;pointer-events:auto;box-shadow:0 0 4px rgba(0,0,0,.5)">
+                                </div>
+                                <div class="__rcs-handle-button"
+                                    style="display:grid;grid-auto-flow:column;gap:8px;place-content:center;flex-shrink:0;width:56px;height:56px;border-radius:50%;border-style:solid;border-width:2px;pointer-events:auto;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);background-color:rgba(0, 0, 0, 0.125);box-shadow:0 0 4px rgba(0,0,0,.35)">
+                                    <div class="__rcs-handle-arrow"
+                                        style="width:0;height:0;border-top:8px solid transparent;border-right:10px solid;border-bottom:8px solid transparent">
+                                    </div>
+                                    <div class="__rcs-handle-arrow"
+                                        style="width:0;height:0;border-top:8px solid transparent;border-right:10px solid;border-bottom:8px solid transparent;transform:rotate(180deg)">
+                                    </div>
+                                </div>
+                                <div class="__rcs-handle-line"
+                                    style="flex-grow:1;height:100%;width:2px;background-color:currentColor;pointer-events:auto;box-shadow:0 0 4px rgba(0,0,0,.5)">
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="flex flex-col" id="carousel">
+                        <p class="mb-1 text-center font-bold text-foreground/30">AS SEEN ON</p>
+                        <div class="relative side-fade mx-auto max-w-xl overflow-hidden" role="region"
+                            aria-roledescription="carousel">
+                            <div class="overflow-hidden">
+                                <div class="flex ml-40 mr-40">
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img
+                                            src="/logos/digitaltrends.png" alt="Digital Trends"
+                                            class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img src="/logos/makeuseof.png"
+                                            alt="Make Use Of" class="h-full object-contain px-10 opacity-60 invert" />
+                                    </div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img src="/logos/gigazine.png"
+                                            alt="Gigazine" class="h-full object-contain px-10 opacity-60 invert" />
+                                    </div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img src="/logos/howtogeek.png"
+                                            alt="How To Geek" class="h-full object-contain px-10 opacity-60 invert" />
+                                    </div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img
+                                            src="/logos/ycombinator.png" alt="Y-Combinator"
+                                            class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img
+                                            src="/logos/itsfossnews.png" alt="It&#x27;s Foss News"
+                                            class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img src="/logos/beebom.png"
+                                            alt="Beebom" class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img
+                                            src="/logos/geekworkers.png" alt="Geek Workers"
+                                            class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img src="/logos/nerdschalk.png"
+                                            alt="Nerds Chalk" class="h-full object-contain px-10 opacity-60 invert" />
+                                    </div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img src="/logos/reddit.png"
+                                            alt="Reddit" class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img src="/logos/medium.png"
+                                            alt="Medium" class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                    <div role="group" aria-roledescription="slide"
+                                        class="min-w-0 shrink-0 grow-0 basis-full pl-4"><img
+                                            src="/logos/linuxuprising.png" alt="Linux Uprising"
+                                            class="h-full object-contain px-10 opacity-60 invert" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><img src="/home/ring.png" alt="Ring"
+                    class="absolute left-1/2 top-32 z-0 -translate-x-1/2 md:top-28" id="circle" />
+            </section>
+            <section id="information-section"
+                class="relative flex min-h-screen w-full flex-col gap-10 overflow-hidden p-10 xl:px-40">
+                <div class="flex flex-col items-center gap-4 text-center" id="header">
+                    <div id="heading">
+                        <h1 class="text-center text-5xl md:text-6xl">Upscayl your pixels, <br />enhance your life.</h1>
+                    </div>
+                    <div id="subheading">
+                        <p class="text-center text-xl text-slate-400">Upscayl lets you enhance your images using
+                            AI.<br /> Hassle free and easy to use.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-10" id="cards">
+                    <div class="card flex w-full items-center justify-between overflow-hidden rounded-3xl px-10 py-10 md:px-20 md:py-10 flex-col-reverse gap-10 md:flex-row bg-indigo-400/10"
+                        id="card-1">
+                        <div class="flex w-fit flex-col justify-center gap-2" id="info">
+                            <h2 class="text-4xl font-medium text-slate-100">Low resolution is no fun!</h2>
+                            <p class="max-w-sm text-lg text-slate-300">Got a blurry photo or a pixelated mess? Love the
+                                memories but hate the quality?<br /><br />We’ve all been there.</p>
+                        </div><img src="/home/upscaling.webp" alt="Illustration"
+                            class="w-full mix-blend-screen md:w-1/2" />
+                    </div>
+                    <div class="card flex w-full items-center justify-between overflow-hidden rounded-3xl px-10 py-10 md:px-20 md:py-10 flex-col-reverse gap-10 md:flex-row-reverse bg-blue-400/10"
+                        id="card-2">
+                        <div class="flex w-fit flex-col justify-center gap-2" id="info">
+                            <h2 class="text-4xl font-medium text-slate-100">Heaven help you</h2>
+                            <p class="max-w-sm text-lg text-slate-300">Okay, so you need to up your image game.
+                                <br /><br /> You could try guessing your way through image editing or spend a ton of
+                                cash on complicated software or help (ouch, your wallet just died 🙃).<br /><br /> Or
+                                maybe keep squinting at the screen, that might work, but let’s not count on it.</p>
+                        </div><img src="/home/headache.webp" alt="Illustration"
+                            class="w-full mix-blend-screen md:w-1/2" />
+                    </div>
+                    <div class="card flex w-full items-center justify-between overflow-hidden rounded-3xl px-10 py-10 md:px-20 md:py-10 flex-col-reverse gap-10 md:flex-row bg-violet-400/10"
+                        id="card-3">
+                        <div class="flex w-fit flex-col justify-center gap-2" id="info">
+                            <h2 class="text-4xl font-medium text-slate-100">We’ve got you covered</h2>
+                            <p class="max-w-sm text-lg text-slate-300">Here’s Upscayl — an AI image upscaler that turns
+                                fuzzy photos into clear works of art! Easy to use and fun to say, it’s the magic wand
+                                your images have been waiting for. <br /><br /> Give Upscayl a spin, and your images
+                                will thank you!</p>
+                        </div><img src="/home/desktop.png" alt="Illustration"
+                            class="w-full mix-blend-screen md:w-1/2" />
+                    </div>
+                </div>
+            </section>
+            <div class="flex items-center overflow-hidden">
+                <div class="font-syne flex items-center text-9xl font-extralight uppercase text-slate-400/50">
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                </div>
+            </div>
+            <section class="relative h-[300vh] w-screen justify-center overflow-hidden" id="made-for-section">
+                <div id="text-container" class="flex h-fit flex-col gap-2 text-center">
+                    <h4 class="text-3xl text-slate-300">Upscayl is made for</h4>
+                    <div class="headings relative flex h-36 flex-col overflow-hidden text-slate-100">
+                        <h1 class="_1 text-7xl font-bold md:text-9xl">Creators</h1>
+                        <h1 class="_2 text-7xl font-bold md:text-9xl">Businesses</h1>
+                        <h1 class="_3 text-7xl font-bold md:text-9xl">Designers</h1>
+                        <h1 class="_5 text-7xl font-bold md:text-9xl">Artists</h1>
+                        <h1 class="_4 text-7xl font-bold md:text-9xl">Developers</h1>
+                        <h1 class="_6 text-7xl font-bold md:text-9xl">You</h1>
+                    </div>
+                </div>
+            </section>
+            <section id="upscayl-cloud-section"
+                class="relative flex min-h-screen w-full flex-col gap-10 overflow-hidden p-10 xl:px-40">
+                <div class="flex flex-col items-center gap-4 text-center">
+                    <div id="heading">
+                        <h1 class="text-center text-5xl md:text-6xl">Meet <br />Upscayl Cloud.</h1>
+                    </div>
+                    <div id="subheading">
+                        <p class="text-center text-xl text-slate-400">The best gets even better!</p>
+                    </div>
+                </div>
+                <div class="relative mx-auto flex w-full flex-col items-center justify-center gap-10 overflow-hidden rounded-md md:w-9/12"
+                    id="showcase-image"><img src="/home/cloud-screenshot.png" alt="Upscayl Cloud Screenshot"
+                        class="overflow-md w-full" /></div>
+                <div id="cloud-features-grid" class="grid w-full auto-rows-[22rem] grid-cols-3 gap-4 lg:grid-rows-3">
+                    <div
+                        class="group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl border bg-black/10 lg:row-start-1 lg:row-end-2 lg:col-start-2 lg:col-end-3">
+                        <div><img class="absolute -right-20 -top-20 opacity-60" alt="" /></div>
+                        <div
+                            class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-gauge h-12 w-12 origin-left transform-gpu text-slate-300 transition-all duration-300 ease-in-out group-hover:scale-75"
+                                aria-hidden="true">
+                                <path d="m12 14 4-4"></path>
+                                <path d="M3.34 19a10 10 0 1 1 17.32 0"></path>
+                            </svg>
+                            <h3 class="text-left text-xl font-semibold text-slate-300">Unmatched speed</h3>
+                            <p class="max-w-lg text-left text-slate-400">Upscayl 10x faster than before.</p>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <a href="/cloud"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 pointer-events-auto">Learn
+                                more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></a></div>
+                        <div
+                            class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-slate-800/10">
+                        </div>
+                    </div>
+                    <div
+                        class="group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl border bg-black/10 lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3">
+                        <div><img class="absolute -right-20 -top-20 opacity-60" alt="" /></div>
+                        <div
+                            class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-palette h-12 w-12 origin-left transform-gpu text-slate-300 transition-all duration-300 ease-in-out group-hover:scale-75"
+                                aria-hidden="true">
+                                <path
+                                    d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z">
+                                </path>
+                                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                            </svg>
+                            <h3 class="text-left text-xl font-semibold text-slate-300">Color Accuracy</h3>
+                            <p class="max-w-lg text-left text-slate-400">Preserve details and colors for printing.</p>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <a href="/cloud"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 pointer-events-auto">Learn
+                                more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></a></div>
+                        <div
+                            class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-slate-800/10">
+                        </div>
+                    </div>
+                    <div
+                        class="group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl border bg-black/10 lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3">
+                        <div><img class="absolute -right-20 -top-20 opacity-60" alt="" /></div>
+                        <div
+                            class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-puzzle h-12 w-12 origin-left transform-gpu text-slate-300 transition-all duration-300 ease-in-out group-hover:scale-75"
+                                aria-hidden="true">
+                                <path
+                                    d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z">
+                                </path>
+                            </svg>
+                            <h3 class="text-left text-xl font-semibold text-slate-300">Suit your style</h3>
+                            <p class="max-w-lg text-left text-slate-400">Several model styles for enhanced quality.</p>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <a href="/cloud"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 pointer-events-auto">Learn
+                                more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></a></div>
+                        <div
+                            class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-slate-800/10">
+                        </div>
+                    </div>
+                    <div
+                        class="group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl border bg-black/10 lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3">
+                        <div><img class="absolute -right-20 -top-20 opacity-60" alt="" /></div>
+                        <div
+                            class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-cloud h-12 w-12 origin-left transform-gpu text-slate-300 transition-all duration-300 ease-in-out group-hover:scale-75"
+                                aria-hidden="true">
+                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                            </svg>
+                            <h3 class="text-left text-xl font-semibold text-slate-300">Unlimited cloud storage</h3>
+                            <p class="max-w-lg text-left text-slate-400">Access your files from anywhere, anytime.</p>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <a href="/cloud"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 pointer-events-auto">Learn
+                                more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></a></div>
+                        <div
+                            class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-slate-800/10">
+                        </div>
+                    </div>
+                    <div
+                        class="group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl border bg-black/10 lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4">
+                        <div><img class="absolute -right-20 -top-20 opacity-60" alt="" /></div>
+                        <div
+                            class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-group h-12 w-12 origin-left transform-gpu text-slate-300 transition-all duration-300 ease-in-out group-hover:scale-75"
+                                aria-hidden="true">
+                                <path d="M3 7V5c0-1.1.9-2 2-2h2"></path>
+                                <path d="M17 3h2c1.1 0 2 .9 2 2v2"></path>
+                                <path d="M21 17v2c0 1.1-.9 2-2 2h-2"></path>
+                                <path d="M7 21H5c-1.1 0-2-.9-2-2v-2"></path>
+                                <rect width="7" height="5" x="7" y="7" rx="1"></rect>
+                                <rect width="7" height="5" x="10" y="12" rx="1"></rect>
+                            </svg>
+                            <h3 class="text-left text-xl font-semibold text-slate-300">Batch Upscayl</h3>
+                            <p class="max-w-lg text-left text-slate-400">Upscayl all your images in one go.</p>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <a href="/cloud"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 pointer-events-auto">Learn
+                                more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></a></div>
+                        <div
+                            class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-slate-800/10">
+                        </div>
+                    </div>
+                    <div
+                        class="group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl border bg-black/10 lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2">
+                        <div><img class="absolute -right-20 -top-20 opacity-60" alt="" /></div>
+                        <div
+                            class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-infinity h-12 w-12 origin-left transform-gpu text-slate-300 transition-all duration-300 ease-in-out group-hover:scale-75"
+                                aria-hidden="true">
+                                <path d="M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8"></path>
+                            </svg>
+                            <h3 class="text-left text-xl font-semibold text-slate-300">Be Limitless</h3>
+                            <p class="max-w-lg text-left text-slate-400">Upscayl really large resolutions in just a
+                                click.</p>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <a href="/cloud"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 pointer-events-auto">Learn
+                                more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></a></div>
+                        <div
+                            class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-slate-800/10">
+                        </div>
+                    </div>
+                    <div
+                        class="group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-xl border bg-black/10 lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4">
+                        <div><img class="absolute -right-20 -top-20 opacity-60" alt="" /></div>
+                        <div
+                            class="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-monitor-speaker h-12 w-12 origin-left transform-gpu text-slate-300 transition-all duration-300 ease-in-out group-hover:scale-75"
+                                aria-hidden="true">
+                                <path d="M5.5 20H8"></path>
+                                <path d="M17 9h.01"></path>
+                                <rect width="10" height="16" x="12" y="4" rx="2"></rect>
+                                <path d="M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4"></path>
+                                <circle cx="17" cy="15" r="1"></circle>
+                            </svg>
+                            <h3 class="text-left text-xl font-semibold text-slate-300">Universal compatibility</h3>
+                            <p class="max-w-lg text-left text-slate-400">Desktop, mobile, tablet, Upscayl Cloud is
+                                available on all devices.</p>
+                        </div>
+                        <div
+                            class="pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                            <a href="/cloud"
+                                class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 pointer-events-auto">Learn
+                                more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 h-4 w-4"
+                                    aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg></a></div>
+                        <div
+                            class="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-slate-800/10">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="upscayl-desktop-section"
+                class="relative flex min-h-screen w-full flex-col items-center gap-10 overflow-hidden p-10 xl:px-40">
+                <div class="flex flex-col items-center gap-4 text-center">
+                    <div id="heading">
+                        <h1 class="text-center text-5xl md:text-6xl">The app you know <br />and love</h1>
+                    </div>
+                    <div id="subheading">
+                        <p class="max-w-md text-center text-xl text-slate-400">Upscayl Desktop continues to be the best
+                            image upscaler for Linux, MacOS and Windows with new features and improvements.</p>
+                    </div>
+                </div>
+                <div class="relative flex w-full flex-col items-center justify-center gap-10 overflow-hidden rounded-md md:w-9/12"
+                    id="showcase-image"><img src="/home/desktop-screenshot-2.webp" alt="Upscayl Desktop Screenshot"
+                        class="overflow-md w-full" /></div>
+                <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div class="flex flex-row items-start gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-hand-heart animate h-14 w-14 rounded-sm border border-slate-50/10 bg-slate-50/0 p-4 hover:bg-slate-50/10"
+                            aria-hidden="true">
+                            <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"></path>
+                            <path
+                                d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9">
+                            </path>
+                            <path d="m2 15 6 6"></path>
+                            <path
+                                d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z">
+                            </path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-semibold">Free and Open Source</h1>
+                            <p class="max-w-64 text-slate-50/60">We ❤️ open source. Download once, forever yours.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-start gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-palette animate h-14 w-14 rounded-sm border border-slate-50/10 bg-slate-50/0 p-4 hover:bg-slate-50/10"
+                            aria-hidden="true">
+                            <path
+                                d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z">
+                            </path>
+                            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-semibold">Save in high quality</h1>
+                            <p class="max-w-64 text-slate-50/60">Enhance your images by up to 16x better resolution.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-start gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-puzzle animate h-14 w-14 rounded-sm border border-slate-50/10 bg-slate-50/0 p-4 hover:bg-slate-50/10"
+                            aria-hidden="true">
+                            <path
+                                d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z">
+                            </path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-semibold">Models for every need</h1>
+                            <p class="max-w-64 text-slate-50/60">Choose between different models for different needs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-start gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-sparkles animate h-14 w-14 rounded-sm border border-slate-50/10 bg-slate-50/0 p-4 hover:bg-slate-50/10"
+                            aria-hidden="true">
+                            <path
+                                d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                            </path>
+                            <path d="M20 3v4"></path>
+                            <path d="M22 5h-4"></path>
+                            <path d="M4 17v2"></path>
+                            <path d="M5 18H3"></path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-semibold">Vast Customization</h1>
+                            <p class="max-w-64 text-slate-50/60">Customize your app and images to your liking.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-start gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-group animate h-14 w-14 rounded-sm border border-slate-50/10 bg-slate-50/0 p-4 hover:bg-slate-50/10"
+                            aria-hidden="true">
+                            <path d="M3 7V5c0-1.1.9-2 2-2h2"></path>
+                            <path d="M17 3h2c1.1 0 2 .9 2 2v2"></path>
+                            <path d="M21 17v2c0 1.1-.9 2-2 2h-2"></path>
+                            <path d="M7 21H5c-1.1 0-2-.9-2-2v-2"></path>
+                            <rect width="7" height="5" x="7" y="7" rx="1"></rect>
+                            <rect width="7" height="5" x="10" y="12" rx="1"></rect>
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-semibold">Batch Upscayl</h1>
+                            <p class="max-w-64 text-slate-50/60">Upscayl all several images in one go.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-start gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-layers2 lucide-layers-2 animate h-14 w-14 rounded-sm border border-slate-50/10 bg-slate-50/0 p-4 hover:bg-slate-50/10"
+                            aria-hidden="true">
+                            <path
+                                d="M13 13.74a2 2 0 0 1-2 0L2.5 8.87a1 1 0 0 1 0-1.74L11 2.26a2 2 0 0 1 2 0l8.5 4.87a1 1 0 0 1 0 1.74z">
+                            </path>
+                            <path
+                                d="m20 14.285 1.5.845a1 1 0 0 1 0 1.74L13 21.74a2 2 0 0 1-2 0l-8.5-4.87a1 1 0 0 1 0-1.74l1.5-.845">
+                            </path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-semibold">Double Upscayl</h1>
+                            <p class="max-w-64 text-slate-50/60">Upscayl your images twice for better quality.</p>
+                        </div>
+                    </div>
+                </div><a href="/download"><button
+                        class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-slate-600 bg-slate-800/50 py-2 font-medium hover:border-slate-500 hover:bg-slate-700 h-11 rounded-full px-8 text-base text-slate-50/80">Get
+                        Started</button></a>
+            </section>
+            <div class="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20">
+                <h1 class="section-heading z-10 mb-10 max-w-lg text-balance">Hey, people seem to love us too!</h1>
+                <div class="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:20s]">
+                    <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/isobelh_art" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">isobelh.art</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@isobelh_art</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm"> I&#x27;ve been looking everywhere and have settled on
+                                Upscayl. It&#x27;s free, which is a definite bonus, but it also seems better than all
+                                the paid ones I tried the trial of!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/jacoblaren" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">J. Laren</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@jacoblaren</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is free and effective if you simply want to upscale
+                                with minimal shifts.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/ai_artinfocus" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">José Julio Cuairán
+                                    </figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@ai_artinfocus</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I tell you one that you have not mentioned and it is
+                                excellent. Besides, it can be run locally, which is good for your security and privacy.
+                                Do you want to know its name? Upscayl at https://upscayl.org Discover its potential now.
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/gregberge" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Greg Bergé</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@gregberge</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is a free and Open Source alternative to
+                                @Magnific_AI. I tested it, and it&#x27;s stunning 🤯</blockquote>
+                        </figure>
+                    </div>
+                    <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/isobelh_art" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">isobelh.art</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@isobelh_art</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm"> I&#x27;ve been looking everywhere and have settled on
+                                Upscayl. It&#x27;s free, which is a definite bonus, but it also seems better than all
+                                the paid ones I tried the trial of!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/jacoblaren" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">J. Laren</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@jacoblaren</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is free and effective if you simply want to upscale
+                                with minimal shifts.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/ai_artinfocus" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">José Julio Cuairán
+                                    </figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@ai_artinfocus</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I tell you one that you have not mentioned and it is
+                                excellent. Besides, it can be run locally, which is good for your security and privacy.
+                                Do you want to know its name? Upscayl at https://upscayl.org Discover its potential now.
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/gregberge" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Greg Bergé</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@gregberge</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is a free and Open Source alternative to
+                                @Magnific_AI. I tested it, and it&#x27;s stunning 🤯</blockquote>
+                        </figure>
+                    </div>
+                    <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/isobelh_art" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">isobelh.art</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@isobelh_art</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm"> I&#x27;ve been looking everywhere and have settled on
+                                Upscayl. It&#x27;s free, which is a definite bonus, but it also seems better than all
+                                the paid ones I tried the trial of!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/jacoblaren" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">J. Laren</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@jacoblaren</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is free and effective if you simply want to upscale
+                                with minimal shifts.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/ai_artinfocus" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">José Julio Cuairán
+                                    </figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@ai_artinfocus</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I tell you one that you have not mentioned and it is
+                                excellent. Besides, it can be run locally, which is good for your security and privacy.
+                                Do you want to know its name? Upscayl at https://upscayl.org Discover its potential now.
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/gregberge" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Greg Bergé</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@gregberge</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is a free and Open Source alternative to
+                                @Magnific_AI. I tested it, and it&#x27;s stunning 🤯</blockquote>
+                        </figure>
+                    </div>
+                    <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/isobelh_art" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">isobelh.art</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@isobelh_art</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm"> I&#x27;ve been looking everywhere and have settled on
+                                Upscayl. It&#x27;s free, which is a definite bonus, but it also seems better than all
+                                the paid ones I tried the trial of!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/jacoblaren" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">J. Laren</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@jacoblaren</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is free and effective if you simply want to upscale
+                                with minimal shifts.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/ai_artinfocus" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">José Julio Cuairán
+                                    </figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@ai_artinfocus</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I tell you one that you have not mentioned and it is
+                                excellent. Besides, it can be run locally, which is good for your security and privacy.
+                                Do you want to know its name? Upscayl at https://upscayl.org Discover its potential now.
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/gregberge" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Greg Bergé</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@gregberge</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Upscayl is a free and Open Source alternative to
+                                @Magnific_AI. I tested it, and it&#x27;s stunning 🤯</blockquote>
+                        </figure>
+                    </div>
+                </div>
+                <div class="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:20s]">
+                    <div
+                        class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/nolimitlearn" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">nolimitlearn</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@nolimitlearn</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Don&#x27;t want to pay $40/month for Magnific? I have tried
+                                my best to give Javi some good advice to offer a $100/yr. 40 gens/mo. basic plan but
+                                seems to have fallen on deaf ears. This is fine, people can do what they want, so I will
+                                use Upscayl for free.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/_fw" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">_fw</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@_fw</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I use UpScayl pretty much every day and doing so feels like
+                                magic every time. Your user interface tweaks here and there are always appreciated and
+                                UpScayl is a joy to use. Feel proud, Upscayl is witchcraft and I love it</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/Itsyopahadiboy" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Anirudh Thakur</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@Itsyopahadiboy</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">There is a great Upscaler that is Open Source and Entirely
+                                free. It is called, &#x27;Upscayl&#x27; and you can run it locally and now on the cloud
+                                too!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/TheEinarkist" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Einar Petersen</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@TheEinarkist</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">A super nice tool for up-scaling I&#x27;ve used to
+                                &#x27;save&#x27; some images down scaled in the early 00&#x27;s for a website, where the
+                                original photos and paintings had burned in a fire and the only thing remaining were the
+                                digitally compressed images, is Upscayl.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/hard_coded_xyz" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">hard-coded.xyz</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@hard_coded_xyz</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">upscayl are proper distruptors, while some people charge
+                                29usd/month for the same thing those guys offer the same for free, as it should be as
+                                most of this tech is free, just because somebody does not know how to code they should
+                                not be punished</blockquote>
+                        </figure>
+                    </div>
+                    <div
+                        class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/nolimitlearn" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">nolimitlearn</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@nolimitlearn</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Don&#x27;t want to pay $40/month for Magnific? I have tried
+                                my best to give Javi some good advice to offer a $100/yr. 40 gens/mo. basic plan but
+                                seems to have fallen on deaf ears. This is fine, people can do what they want, so I will
+                                use Upscayl for free.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/_fw" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">_fw</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@_fw</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I use UpScayl pretty much every day and doing so feels like
+                                magic every time. Your user interface tweaks here and there are always appreciated and
+                                UpScayl is a joy to use. Feel proud, Upscayl is witchcraft and I love it</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/Itsyopahadiboy" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Anirudh Thakur</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@Itsyopahadiboy</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">There is a great Upscaler that is Open Source and Entirely
+                                free. It is called, &#x27;Upscayl&#x27; and you can run it locally and now on the cloud
+                                too!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/TheEinarkist" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Einar Petersen</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@TheEinarkist</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">A super nice tool for up-scaling I&#x27;ve used to
+                                &#x27;save&#x27; some images down scaled in the early 00&#x27;s for a website, where the
+                                original photos and paintings had burned in a fire and the only thing remaining were the
+                                digitally compressed images, is Upscayl.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/hard_coded_xyz" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">hard-coded.xyz</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@hard_coded_xyz</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">upscayl are proper distruptors, while some people charge
+                                29usd/month for the same thing those guys offer the same for free, as it should be as
+                                most of this tech is free, just because somebody does not know how to code they should
+                                not be punished</blockquote>
+                        </figure>
+                    </div>
+                    <div
+                        class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/nolimitlearn" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">nolimitlearn</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@nolimitlearn</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Don&#x27;t want to pay $40/month for Magnific? I have tried
+                                my best to give Javi some good advice to offer a $100/yr. 40 gens/mo. basic plan but
+                                seems to have fallen on deaf ears. This is fine, people can do what they want, so I will
+                                use Upscayl for free.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/_fw" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">_fw</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@_fw</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I use UpScayl pretty much every day and doing so feels like
+                                magic every time. Your user interface tweaks here and there are always appreciated and
+                                UpScayl is a joy to use. Feel proud, Upscayl is witchcraft and I love it</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/Itsyopahadiboy" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Anirudh Thakur</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@Itsyopahadiboy</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">There is a great Upscaler that is Open Source and Entirely
+                                free. It is called, &#x27;Upscayl&#x27; and you can run it locally and now on the cloud
+                                too!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/TheEinarkist" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Einar Petersen</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@TheEinarkist</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">A super nice tool for up-scaling I&#x27;ve used to
+                                &#x27;save&#x27; some images down scaled in the early 00&#x27;s for a website, where the
+                                original photos and paintings had burned in a fire and the only thing remaining were the
+                                digitally compressed images, is Upscayl.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/hard_coded_xyz" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">hard-coded.xyz</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@hard_coded_xyz</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">upscayl are proper distruptors, while some people charge
+                                29usd/month for the same thing those guys offer the same for free, as it should be as
+                                most of this tech is free, just because somebody does not know how to code they should
+                                not be punished</blockquote>
+                        </figure>
+                    </div>
+                    <div
+                        class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/nolimitlearn" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">nolimitlearn</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@nolimitlearn</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">Don&#x27;t want to pay $40/month for Magnific? I have tried
+                                my best to give Javi some good advice to offer a $100/yr. 40 gens/mo. basic plan but
+                                seems to have fallen on deaf ears. This is fine, people can do what they want, so I will
+                                use Upscayl for free.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/_fw" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">_fw</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@_fw</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">I use UpScayl pretty much every day and doing so feels like
+                                magic every time. Your user interface tweaks here and there are always appreciated and
+                                UpScayl is a joy to use. Feel proud, Upscayl is witchcraft and I love it</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/Itsyopahadiboy" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Anirudh Thakur</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@Itsyopahadiboy</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">There is a great Upscaler that is Open Source and Entirely
+                                free. It is called, &#x27;Upscayl&#x27; and you can run it locally and now on the cloud
+                                too!</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/TheEinarkist" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">Einar Petersen</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@TheEinarkist</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">A super nice tool for up-scaling I&#x27;ve used to
+                                &#x27;save&#x27; some images down scaled in the early 00&#x27;s for a website, where the
+                                original photos and paintings had burned in a fire and the only thing remaining were the
+                                digitally compressed images, is Upscayl.</blockquote>
+                        </figure>
+                        <figure
+                            class="relative z-10 w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-slate-950/[.1] bg-slate-950/[.01] hover:bg-slate-950/[.05] dark:border-slate-50/[.1] dark:bg-slate-50/[.10] dark:hover:bg-slate-50/[.15]">
+                            <div class="flex flex-row items-center gap-2"><img class="rounded-full" width="32"
+                                    height="32" alt="" src="https://unavatar.io/twitter/hard_coded_xyz" />
+                                <div class="flex flex-col">
+                                    <figcaption class="text-sm font-medium dark:text-white">hard-coded.xyz</figcaption>
+                                    <p class="text-xs font-medium dark:text-white/40">@hard_coded_xyz</p>
+                                </div>
+                            </div>
+                            <blockquote class="mt-2 text-sm">upscayl are proper distruptors, while some people charge
+                                29usd/month for the same thing those guys offer the same for free, as it should be as
+                                most of this tech is free, just because somebody does not know how to code they should
+                                not be punished</blockquote>
+                        </figure>
+                    </div>
+                </div>
+                <div class="pointer-events-none absolute inset-y-0 left-0 z-50 w-1/5 bg-gradient-to-r from-slate-900">
+                </div>
+                <div class="pointer-events-none absolute inset-y-0 right-0 z-50 w-1/5 bg-gradient-to-l from-slate-900">
+                </div>
+            </div>
+            <div class="z-10 flex h-[70vh] w-full flex-col items-center justify-center gap-10">
+                <h1 class="text-center text-5xl md:text-8xl"><span id="text-1">Psst...</span> <span id="text-2">Give it
+                        a try</span> <br /> <span id="text-3">It&#x27;s free 🤫</span></h1><a href="/download"><button
+                        class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-slate-600 bg-slate-800/50 py-2 font-medium hover:border-slate-500 hover:bg-slate-700 h-11 rounded-full px-8 text-base text-slate-50/80"
+                        id="button">Get Started, We don&#x27;t bite ;)</button></a>
+            </div>
+            <div class="flex items-center overflow-hidden">
+                <div class="font-syne flex items-center text-9xl font-extralight uppercase text-slate-400/50">
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                    <h3>Upscayl</h3>
+                </div>
+            </div>
+            <footer class="fixed bottom-0 left-0 -z-10 flex w-full flex-col bg-slate-800 px-10 py-10 text-lg md:h-96">
+                <div class="flex h-full flex-col md:py-10 lg:px-32">
+                    <div class="flex w-full flex-col items-start justify-between gap-4 sm:flex-row">
+                        <div class="flex flex-col items-end gap-2">
+                            <h3 class="text-5xl font-bold tracking-tight">Upscayl.</h3>
+                            <p class="text-right tracking-tight text-slate-400">AI Corp</p>
+                        </div>
+                        <div class="flex flex-row gap-24 text-slate-200 md:gap-10">
+                            <div class="flex flex-col gap-2"><a class="animate flex-wrap hover:text-foreground"
+                                    href="/login">Login</a><a class="animate flex-wrap hover:text-foreground"
+                                    href="/pricing">Pricing</a><a href="https://docs.upscayl.org"
+                                    class="animate hover:text-foreground">Docs</a></div>
+                            <div class="flex flex-col gap-2 md:mt-0"><a class="animate hover:text-foreground"
+                                    href="/cloud">Cloud</a><a class="animate hover:text-foreground"
+                                    href="/download">Download</a><a href="https://github.upscayl.org"
+                                    class="animate hover:text-foreground">GitHub</a></div>
+                            <div class="flex flex-col gap-2 md:mt-0"><a class="animate hover:text-foreground"
+                                    href="/privacy">Privacy Policy</a><a class="animate hover:text-foreground"
+                                    href="/terms">Terms of Service</a></div>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-10 flex flex-col items-center justify-between border-t border-slate-50/10 pt-2 md:flex-row md:pt-5">
+                        <div class="flex items-center text-muted-foreground"><a
+                                href="https://github.com/upscayl"><button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"><svg
+                                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512"
+                                        class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                                        </path>
+                                    </svg></button></a><a href="https://x.com/upscayl"><button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"><svg
+                                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                        class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                        </path>
+                                    </svg></button></a><a href="https://t.me/upscayl_official"><button
+                                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10"><svg
+                                        stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512"
+                                        class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z">
+                                        </path>
+                                    </svg></button></a><a
+                                href="/cdn-cgi/l/email-protection#60131510100f1214201510130301190c4e0f1207"
+                                class="text-sm">
+                                <p class="flex items-center gap-2 p-2"><svg stroke="currentColor" fill="currentColor"
+                                        stroke-width="0" viewBox="0 0 512 512" class="h-6 w-6" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z">
+                                        </path>
+                                    </svg><span class="font-semibold"><span class="__cf_email__"
+                                            data-cfemail="22515752524d50566257525141435b4e0c4d5045">[email&#160;protected]</span></span>
+                                </p>
+                            </a></div>
+                        <p class="text-sm text-muted-foreground">Copyright © <!-- -->2026<!-- --> - Upscayl. All rights
+                            reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text"
+            aria-atomic="false"></section>
+    </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script id="__NEXT_DATA__"
+        type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"NE-noGAW8W0P9F_yLHJW7","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
+    <!-- Cloudflare Pages Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "4fac37994bd3405fb899680f8a1dfd00"}'></script><!-- Cloudflare Pages Analytics -->
+    <script defer
+        src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+        integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+        data-cf-beacon='{"version":"2024.11.0","token":"268bceb441ce4c8a9d77de2407375cb9","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
