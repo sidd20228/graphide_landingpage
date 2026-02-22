@@ -3,6 +3,7 @@ import Stepper, { Step } from './Stepper'
 
 export default function FinalCTA() {
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isModalClosing, setIsModalClosing] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [currentStep, setCurrentStep] = useState(1)
@@ -25,11 +26,19 @@ export default function FinalCTA() {
         setSubmitMessage('')
         setCurrentStep(1)
         setSubmitError('')
+        setIsModalClosing(false)
         setIsModalOpen(true)
     }
 
     const closeModal = () => {
+        if (!isModalOpen || isModalClosing) return
+        setIsModalClosing(true)
+    }
+
+    const handleModalAnimationEnd = () => {
+        if (!isModalClosing) return
         setIsModalOpen(false)
+        setIsModalClosing(false)
     }
 
     const handleFinalStepCompleted = async () => {
@@ -50,7 +59,7 @@ export default function FinalCTA() {
 
             setSubmitMessage(payload.message || 'Thanks! We’ll reach out soon.')
             setSubmitted(true)
-            setIsModalOpen(false)
+            setIsModalClosing(true)
             setName('')
             setEmail('')
         } catch (error) {
@@ -69,7 +78,7 @@ export default function FinalCTA() {
 
         window.addEventListener('keydown', onKeyDown)
         return () => window.removeEventListener('keydown', onKeyDown)
-    }, [isModalOpen])
+    }, [isModalOpen, isModalClosing])
 
     return (
         <>
@@ -89,7 +98,11 @@ export default function FinalCTA() {
             </section>
 
             {isModalOpen && (
-                <div className="waitlist-modal-overlay" onClick={closeModal}>
+                <div
+                    className={`waitlist-modal-overlay ${isModalClosing ? 'is-closing' : ''}`}
+                    onClick={closeModal}
+                    onAnimationEnd={handleModalAnimationEnd}
+                >
                     <div
                         className="waitlist-modal"
                         onClick={(e) => e.stopPropagation()}
