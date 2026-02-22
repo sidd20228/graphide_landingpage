@@ -154,6 +154,8 @@ ul {
 }
 
 .section-inner {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
@@ -194,30 +196,50 @@ ul {
   color: rgba(255, 255, 255, 0.78);
 }
 
-/* Gradient text treatment — white to fade */
+/* Gradient text treatment — animated moving gradient */
 .gradient-text,
 .gradient-text-large,
 .hero-heading {
-  --grad-angle: 144.5deg;
+  --grad-x: 0%;
+  --grad-y: 50%;
   --shadow-x: 0px;
   --shadow-y: 10px;
   --shadow-alpha: 0.14;
   text-shadow: var(--shadow-x) var(--shadow-y) 30px rgba(96, 165, 250, var(--shadow-alpha));
   filter: drop-shadow(var(--shadow-x) var(--shadow-y) 20px rgba(96, 165, 250, calc(var(--shadow-alpha) * 0.7)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  background-position: var(--grad-x) var(--grad-y);
+  transition: filter 0.35s ease, text-shadow 0.35s ease;
+  cursor: default;
 }
 
 .gradient-text {
-  background: linear-gradient(var(--grad-angle), #ffffff 28%, rgba(255, 255, 255, 0.35) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.92) 25%,
+      rgba(255, 255, 255, 0.82) 50%,
+      rgba(255, 255, 255, 0.92) 75%,
+      #ffffff 100%);
 }
 
 .gradient-text-large {
-  background: linear-gradient(var(--grad-angle), #ffffff 20%, rgba(96, 165, 250, 0.5) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg,
+      #ffffff 0%,
+      #bfdbfe 20%,
+      #93c5fd 45%,
+      #a5b4fc 70%,
+      #bfdbfe 100%);
+}
+
+/* Hover glow boost on gradient headings */
+.gradient-text:hover,
+.gradient-text-large:hover,
+.hero-heading:hover {
+  --shadow-alpha: 0.28;
+  filter: drop-shadow(0 10px 30px rgba(96, 165, 250, 0.25));
 }
 
 /* ═══════════════════════════════════════════════
@@ -403,10 +425,12 @@ ul {
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -1.5px;
-  background: linear-gradient(var(--grad-angle), #ffffff 60%, rgba(255, 255, 255, 0.35) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 0.65) 55%,
+      rgba(255, 255, 255, 0.9) 80%,
+      #ffffff 100%);
 }
 
 
@@ -417,6 +441,8 @@ ul {
   .hero-heading {
     text-shadow: 0 10px 30px rgba(96, 165, 250, 0.14);
     filter: drop-shadow(0 10px 20px rgba(96, 165, 250, 0.1));
+    background-size: 100% 100%;
+    background-position: 0% 50%;
   }
 }
 
@@ -434,7 +460,7 @@ ul {
    SECTION 2 — THE GAP
    ═══════════════════════════════════════════════ */
 .section--gap {
-  padding: 160px 0;
+  padding: 240px 0;
 }
 
 
@@ -491,7 +517,7 @@ ul {
    SECTION 3 — WHAT GRAPHIDE DOES
    ═══════════════════════════════════════════════ */
 .section--what {
-  padding: 160px 0;
+  padding: 240px 0;
 }
 
 
@@ -685,7 +711,7 @@ ul {
    SECTION 4 — HOW IT WORKS
    ═══════════════════════════════════════════════ */
 .section--how {
-  padding: 160px 0;
+  padding: 240px 0;
 }
 
 
@@ -747,7 +773,7 @@ ul {
    SECTION 5 — ENTERPRISE READY
    ═══════════════════════════════════════════════ */
 .section--enterprise {
-  padding: 160px 0;
+  padding: 240px 0;
 }
 
 
@@ -805,7 +831,7 @@ ul {
    SECTION 6 — WHY IT IS DIFFERENT
    ═══════════════════════════════════════════════ */
 .section--diff {
-  padding: 40px 0;
+  padding: 160px 0;
 }
 
 .section--diff .section-inner {
@@ -899,7 +925,7 @@ ul {
    FINAL CTA
    ═══════════════════════════════════════════════ */
 .section--cta {
-  padding: 48px 0 40px;
+  padding: 120px 0 100px;
 }
 
 .section--cta .section-inner {
@@ -1170,7 +1196,7 @@ ul {
 
   /* What */
   .section--what {
-    padding: 36px 0;
+    padding: 80px 0;
   }
 
   .what-grid {
@@ -1192,7 +1218,7 @@ ul {
 
   /* How */
   .section--how {
-    padding: 28px 0;
+    padding: 80px 0;
   }
 
   .steps {
@@ -1207,7 +1233,7 @@ ul {
 
   /* Enterprise */
   .section--enterprise {
-    padding: 28px 0;
+    padding: 80px 0;
   }
 
   .ent-grid {
@@ -1216,7 +1242,7 @@ ul {
 
   /* Diff */
   .section--diff {
-    padding: 28px 0;
+    padding: 80px 0;
   }
 
   .compare {
@@ -1238,7 +1264,7 @@ ul {
 
   /* CTA */
   .section--cta {
-    padding: 28px 0 24px;
+    padding: 60px 0 48px;
   }
 
   .cta-heading {
@@ -1255,6 +1281,26 @@ ul {
 
   .waitlist-modal-title {
     font-size: 24px;
+  }
+
+  /* Remove ambient glow and reduce overlay on mobile */
+  .section::before {
+    height: 80px;
+  }
+
+  .section::after {
+    height: 80px;
+  }
+
+  .section--gap::before,
+  .section--what::before,
+  .section--how::before,
+  .section--enterprise::before,
+  .section--diff::before {
+    height: 120px;
+    background:
+      radial-gradient(ellipse 60% 80px at 50% 0%, rgba(96, 165, 250, 0.04) 0%, transparent 100%),
+      linear-gradient(to bottom, #000000 0%, transparent 100%);
   }
 }
 

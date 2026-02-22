@@ -6,12 +6,20 @@ import Enterprise from './components/Enterprise'
 import Comparison from './components/Comparison'
 import FinalCTA from './components/FinalCTA'
 import { useReveal } from './hooks/useReveal'
-import { useEffect } from 'react'
+import { useGradientAnimation } from './hooks/useGradientAnimation'
+import { useEffect, useCallback } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 
 export default function App() {
-    const containerRef = useReveal()
+    const revealRef = useReveal()
+    const gradientRef = useGradientAnimation()
+
+    // Merge both refs into one callback ref
+    const containerRef = useCallback((node) => {
+        revealRef.current = node
+        gradientRef.current = node
+    }, [revealRef, gradientRef])
 
     useEffect(() => {
         const canonicalHref = `${window.location.origin}${window.location.pathname}`
