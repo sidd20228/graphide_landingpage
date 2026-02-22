@@ -15,31 +15,33 @@ export default function Hero() {
             {/* Interface Layer */}
             <div className="interface">
                 {/* Centered Wordmark */}
-                <div className="wordmark-hero">
+                <div className="wordmark-hero" data-reveal="fade">
                     <span className="wordmark">GRAPHIDE</span>
                 </div>
+
+
 
                 {/* Hero Content */}
                 <main className="hero">
                     <div className="hero-content">
-                        <div className="badge-pill">
+                        <div className="badge-pill" data-reveal="" data-delay="1">
                             <span className="badge-dot"></span>
                             <span className="badge-label">Private beta launching</span>
                             <span className="badge-date">&nbsp;April 2026</span>
                         </div>
-                        <h1 className="hero-heading">Code at the Speed of Thought</h1>
-                        <p className="hero-subtitle">
+                        <h1 className="hero-heading" data-reveal="" data-delay="2">Code at the Speed of Thought</h1>
+                        <p className="hero-subtitle" data-reveal="" data-delay="3">
                             Graphide transforms your codebase into a living knowledge graph, enabling real‑time context,
                             intelligent navigation, and seamless collaboration. Build faster, reason deeper, and ship with
                             clarity.
                         </p>
-                        <a href="#cta" className="btn-waitlist btn-waitlist--cta">
-                            <span className="btn-glow"></span>
+                        <a href="#cta" className="btn-waitlist btn-waitlist--cta" data-reveal="" data-delay="4">
                             <span className="btn-text">Join Waitlist</span>
                         </a>
                     </div>
                 </main>
             </div>
+
         </section>
     )
 }

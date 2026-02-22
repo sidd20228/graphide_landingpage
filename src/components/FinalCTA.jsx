@@ -89,9 +89,9 @@ export default function FinalCTA() {
                     </h2>
                     <p className="cta-sub" data-reveal="">Deterministic verification for modern AI‑driven development.</p>
                     <button type="button" className="btn-waitlist btn-waitlist--cta" data-reveal="" onClick={openModal}>
-                        <span className="btn-glow"></span>
                         <span className="btn-text">Request Early Access</span>
                     </button>
+
                     {submitted && <p className="cta-success">{submitMessage || 'Thanks! We’ll reach out soon.'}</p>}
                     <p className="cta-footnote" data-reveal="">Built for teams that cannot afford uncertainty.</p>
                 </div>
